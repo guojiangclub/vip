@@ -31,7 +31,7 @@ class VipTest extends BaseTest
 			'joined_at' => Carbon::now(),
 		]);
 
-		$member = $this->vipMemberRepository->getDefaultPlanByUserId(1);
+		$member = $this->vipMemberRepository->getDefaultByUserId(1);
 		$this->assertSame($member->count(), 1);
 
 		$list = $this->vipMemberRepository->getPlansByUserId(1);

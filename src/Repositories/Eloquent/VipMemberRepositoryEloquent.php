@@ -18,7 +18,7 @@ class VipMemberRepositoryEloquent extends BaseRepository implements VipMemberRep
 		return $this->with('plan')->orderBy('created_at', 'DESC')->findWhere(['user_id' => $user_id]);
 	}
 
-	public function getDefaultPlanByUserId($user_id)
+	public function getDefaultByUserId($user_id)
 	{
 		return $this->with('plan')->findWhere(['is_default' => 1, 'status' => 1, 'user_id' => $user_id])->first();
 	}

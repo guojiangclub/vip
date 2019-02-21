@@ -19,5 +19,5 @@ interface VipMemberRepository extends RepositoryInterface
 	 *
 	 * @return mixed
 	 */
-	public function getDefaultPlanByUserId($user_id);
+	public function getDefaultByUserId($user_id);
 }
