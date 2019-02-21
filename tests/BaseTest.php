@@ -4,8 +4,6 @@ namespace iBrand\Component\Vip\Test;
 
 use iBrand\Component\Vip\Repositories\VipMemberRepository;
 use iBrand\Component\Vip\Repositories\VipOrderRepository;
-use iBrand\Component\Vip\Models\VipOrder;
-use iBrand\Component\Vip\Models\VipPlan;
 use iBrand\Component\Vip\Repositories\VipPlanRepository;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase;
