@@ -1,6 +1,6 @@
 <?php
 
-namespace iBrand\Component\Vip;
+namespace iBrand\Component\Vip\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,11 +12,12 @@ class VipPlan extends Model
 
 	public function getActionsAttribute($value)
 	{
+		$actions = null;
 		if ($value) {
-			return json_decode($value, true);
+			$actions = json_decode($value, true);
 		}
 
-		return '';
+		return $actions;
 	}
 
 	public function setActionsAttribute($value)
@@ -24,5 +25,22 @@ class VipPlan extends Model
 		if ($value && is_array($value)) {
 			$this->attributes['actions'] = json_encode($value);
 		}
+	}
+
+	public function setPriceAttribute($value)
+	{
+		if ($value > 0) {
+			$this->attributes['price'] = $value * 100;
+		}
+	}
+
+	public function getPriceAttribute($value)
+	{
+		$price = 0;
+		if ($value > 0) {
+			$price = $value / 100;
+		}
+
+		return $price;
 	}
 }

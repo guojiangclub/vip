@@ -1,6 +1,6 @@
 <?php
 
-namespace iBrand\Component\Vip;
+namespace iBrand\Component\Vip\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
