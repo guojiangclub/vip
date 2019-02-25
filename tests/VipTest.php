@@ -3,6 +3,7 @@
 namespace iBrand\Component\Vip\Test;
 
 use Carbon\Carbon;
+use iBrand\Component\Vip\Models\VipMember;
 
 class VipTest extends BaseTest
 {
@@ -33,6 +34,8 @@ class VipTest extends BaseTest
 
 		$member = $this->vipMemberRepository->getDefaultByUserId(1);
 		$this->assertSame($member->count(), 1);
+		$scope = VipMember::DefaultPlan(1);
+		$this->assertSame($member->user_id, $scope->user_id);
 
 		$list = $this->vipMemberRepository->getPlansByUserId(1);
 		$this->assertSame($list->count(), 1);

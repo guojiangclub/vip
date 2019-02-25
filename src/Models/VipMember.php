@@ -14,4 +14,9 @@ class VipMember extends Model
 	{
 		return $this->belongsTo(VipPlan::class, 'plan_id');
 	}
+
+	public function scopeDefaultPlan($query, $user_id)
+	{
+		return $query->with('plan')->where('is_default', 1)->where('status', 1)->where('user_id', $user_id)->first();
+	}
 }
