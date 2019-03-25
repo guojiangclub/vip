@@ -17,6 +17,6 @@ class VipMember extends Model
 
 	public function scopeDefaultPlan($query, $user_id)
 	{
-		return $query->with('plan')->where('is_default', 1)->where('status', 1)->where('user_id', $user_id)->first();
+		return $query->with('plan')->where('is_default', 1)->where('status', 1)->where('user_id', $user_id)->get();
 	}
 }
