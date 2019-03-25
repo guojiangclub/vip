@@ -34,7 +34,7 @@ class VipTest extends BaseTest
 
 		$member = $this->vipMemberRepository->getDefaultByUserId(1);
 		$this->assertSame($member->count(), 1);
-		$scope = VipMember::DefaultPlan(1);
+		$scope = VipMember::DefaultPlan(1)->first();
 		$this->assertSame($member->user_id, $scope->user_id);
 
 		$list = $this->vipMemberRepository->getPlansByUserId(1);
