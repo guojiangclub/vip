@@ -5,9 +5,12 @@ namespace iBrand\Component\Vip\Repositories\Eloquent;
 use iBrand\Component\Vip\Repositories\VipMemberRepository;
 use iBrand\Component\Vip\Models\VipMember;
 use Prettus\Repository\Eloquent\BaseRepository;
+use Prettus\Repository\Traits\CacheableRepository;
 
 class VipMemberRepositoryEloquent extends BaseRepository implements VipMemberRepository
 {
+    use CacheableRepository;
+
 	public function model()
 	{
 		return VipMember::class;
